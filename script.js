@@ -1,3 +1,16 @@
+const lenis = new Lenis()
+
+lenis.on('scroll', (e) => {
+    console.log(e)
+})
+
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
+
 let mm = gsap.matchMedia();
 
 mm.add("(min-width: 800px)", () => {
@@ -119,10 +132,10 @@ mm2.add("(max-width: 799px)", () => {
     let tl2 = gsap.timeline({
         scrollTrigger: {
             trigger: '.section3',
-            start: '0% 50%',
+            start: '0% 90%',
             end: '100% 100%',
             scrub: 1,
-            // markers: true
+            markers: true
         }
     });
 
